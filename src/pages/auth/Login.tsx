@@ -12,11 +12,13 @@ import google_icon from "../../assets/g1520.svg";
 import TextInput from "../../components/TextInput";
 import show_password from "../../assets/eye-off-line.svg";
 import hide_password from "../../assets/eye-line.svg";
+import ForgotPassword from "./ForgotPassword";
 
 const Login = () => {
   const [phone, setPhone] = useState("");
   const [displayPasswordScreen, setDisplayPasswordScreen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
   return (
     <div>
       <div className="w-full flex flex-col bg-mangolia items-center gap-10 p-10">
@@ -100,10 +102,18 @@ const Login = () => {
               icon={showPassword ? hide_password : show_password}
               iconOnClick={() => setShowPassword(!showPassword)}
             />
-            <p className="text-celtic-blue b6 text-end">Forgot password?</p>
+            <p
+              className="text-celtic-blue b6 text-end cursor-pointer"
+              onClick={() => setShowForgotPassword(true)}
+            >
+              Forgot password?
+            </p>
           </div>
           <Button title="Login" onClick={() => ""} />
         </div>
+      )}
+      {showForgotPassword && (
+        <ForgotPassword onClose={() => setShowForgotPassword(false)} />
       )}
     </div>
   );
