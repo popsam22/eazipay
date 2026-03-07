@@ -94,7 +94,7 @@ const Login = () => {
       ) : (
         <div className="flex flex-col p-4 gap-6">
           <h1>Enter your password</h1>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 mb-20">
             <TextInput
               label="Password"
               placeholder="Enter your password"

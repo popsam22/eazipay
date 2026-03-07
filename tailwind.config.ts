@@ -21,6 +21,7 @@ export default {
         mangolia: "#F7F4FF",
         "ocean-blue": "#5732BF",
         "celtic-blue": "#1D62CA",
+        shamrock: "#4DA66B",
       },
       borderRadius: {
         sm: "4px",
