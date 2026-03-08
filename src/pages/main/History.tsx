@@ -4,7 +4,7 @@ import filter_icon from "../../assets/equalizer-line.svg";
 import ActionsCard from "../../components/ActionsCard";
 import Navbar from "../../components/Navbar";
 import TransactionDetail from "../../components/TransactionDetail";
-import { transaction } from "../../constants/transaction";
+import { transactionData } from "../../constants/transaction";
 import type { ActionsCardProps } from "../../interfaces/actionsCard.interface";
 
 const History = () => {
@@ -35,7 +35,7 @@ const History = () => {
       </div>
 
       <div className="flex flex-col gap-3">
-        {transaction.map((group, index) => (
+        {transactionData.map((group, index) => (
           <div key={index} className="flex flex-col gap-3">
             {group.subLabel ? (
               <div>
@@ -46,16 +46,16 @@ const History = () => {
               <p className="r5 text-black-coral">{group.label}</p>
             )}
             <div className="flex flex-col gap-3">
-              {group.transactions.map((tx, index) => (
+              {group.transactions.map((transaction, index) => (
                 <ActionsCard
                   key={index}
-                  {...tx}
+                  {...transaction}
                   isLast={index === group.transactions.length - 1}
-                  onClick={() => setSelected(tx)}
+                  onClick={() => setSelected(transaction)}
                 />
               ))}
             </div>
-            {index < transaction.length - 1 && (
+            {index < transactionData.length - 1 && (
               <div className="h-1.5 bg-alice-blue -mx-4 my-3" />
             )}
           </div>
@@ -65,10 +65,7 @@ const History = () => {
       <Navbar />
 
       {selected && (
-        <TransactionDetail
-          {...selected}
-          onClose={() => setSelected(null)}
-        />
+        <TransactionDetail {...selected} onClose={() => setSelected(null)} />
       )}
     </div>
   );

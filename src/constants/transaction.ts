@@ -6,7 +6,7 @@ import nike_icon from "../assets/image 8.svg";
 import homedepot_icon from "../assets/The home depot.svg";
 import type { Transaction } from "../interfaces/transaction.interface";
 
-export const transaction: Transaction[] = [
+export const transactionData: Transaction[] = [
   {
     label: "Today",
     transactions: [

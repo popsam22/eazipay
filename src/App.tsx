@@ -4,6 +4,7 @@ import CreateAccount from "./pages/auth/CreateAccount";
 import OTP from "./pages/auth/OTP";
 import Home from "./pages/main/Home";
 import History from "./pages/main/History";
+import More from "./pages/main/More";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/otp" element={<OTP />} />
         <Route path="/home" element={<Home />} />
         <Route path="/history" element={<History />} />
+        <Route path="/more" element={<More />} />
       </Routes>
     </>
   );

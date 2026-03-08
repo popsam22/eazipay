@@ -7,6 +7,7 @@ const ActionsCard = ({
   value,
   type,
   icon,
+  iconBg,
   isLast,
   onClick,
 }: ActionsCardProps) => {
@@ -16,8 +17,17 @@ const ActionsCard = ({
   return (
     <div>
       <div className="flex justify-between items-center">
-        <div className="flex gap-2">
-          <img src={icon} alt="actions icon" className="object-contain w-8 h-8" />
+        <div className="flex gap-2 items-center">
+          <div
+            className="w-8 h-8 rounded-lg flex items-center justify-center"
+            style={iconBg ? { backgroundColor: iconBg } : undefined}
+          >
+            <img
+              src={icon}
+              alt={`${icon} icon`}
+              className={`object-contain ${iconBg ? "w-5 h-5" : "w-6 h-6"}`}
+            />
+          </div>
           <div>
             <h1 className="b7 text-black">{title}</h1>
             {subtitle && <p className="r7 text-slate-gray">{subtitle}</p>}
