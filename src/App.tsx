@@ -2,7 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./pages/auth/Login";
 import CreateAccount from "./pages/auth/CreateAccount";
 import OTP from "./pages/auth/OTP";
-import Home from "./pages/home/Home";
+import Home from "./pages/main/Home";
+import History from "./pages/main/History";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/otp" element={<OTP />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/history" element={<History />} />
       </Routes>
     </>
   );

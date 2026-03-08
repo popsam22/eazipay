@@ -8,6 +8,7 @@ const ActionsCard = ({
   type,
   icon,
   isLast,
+  onClick,
 }: ActionsCardProps) => {
   const valueColor =
     type === "profit" ? "text-sea-green" : "text-golden-gate-bridge";
@@ -22,10 +23,10 @@ const ActionsCard = ({
             {subtitle && <p className="r7 text-slate-gray">{subtitle}</p>}
           </div>
         </div>
-        <div className="flex gap-1">
+        <button className="flex gap-1 items-center" onClick={onClick}>
           {value && <p className={`r7 ${valueColor}`}>{value}</p>}
           <img src={arrow_right} alt="arrow right icon" className="w-4 h-4" />
-        </div>
+        </button>
       </div>
       {!isLast && <hr className="border-t border-[#E0E0E0] mt-3" />}
     </div>
