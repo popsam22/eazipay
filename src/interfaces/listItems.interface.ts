@@ -1,4 +1,4 @@
-export interface ActionsCardProps {
+export interface ListItemsProps {
   title: string;
   icon: string;
   subtitle?: string;
@@ -6,6 +6,8 @@ export interface ActionsCardProps {
   type?: "profit" | "loss";
   isLast?: boolean;
   iconBg?: string;
+  label?: string;
+  actionLabel?: string;
   description?: string;
   fullDate?: string;
   transactionNo?: string;

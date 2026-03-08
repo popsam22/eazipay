@@ -1,14 +1,14 @@
 import { useState } from "react";
 import search_icon from "../../assets/search-2-line.svg";
 import filter_icon from "../../assets/equalizer-line.svg";
-import ActionsCard from "../../components/ActionsCard";
+import ListItems from "../../components/ListItems";
 import Navbar from "../../components/Navbar";
 import TransactionDetail from "../../components/TransactionDetail";
 import { transactionData } from "../../constants/transaction";
-import type { ActionsCardProps } from "../../interfaces/actionsCard.interface";
+import type { ListItemsProps } from "../../interfaces/listItems.interface";
 
 const History = () => {
-  const [selected, setSelected] = useState<ActionsCardProps | null>(null);
+  const [selected, setSelected] = useState<ListItemsProps | null>(null);
 
   return (
     <div className="py-6 px-4 flex flex-col gap-6 pb-24">
@@ -27,10 +27,10 @@ const History = () => {
               className="outline-none bg-inherit r6 text-black placeholder:text-silver-sand w-full"
             />
           </div>
-          <div className="flex items-center gap-1.5 border border-azureish-white rounded-sm p-3">
+          <button className="flex items-center gap-1.5 border border-azureish-white rounded-sm p-3">
             <img src={filter_icon} alt="filter icon" className="w-5 h-5" />
             <p className="r6 text-black">Filter</p>
-          </div>
+          </button>
         </div>
       </div>
 
@@ -47,7 +47,7 @@ const History = () => {
             )}
             <div className="flex flex-col gap-3">
               {group.transactions.map((transaction, index) => (
-                <ActionsCard
+                <ListItems
                   key={index}
                   {...transaction}
                   isLast={index === group.transactions.length - 1}

@@ -1,4 +1,4 @@
-import ActionsCard from "../../components/ActionsCard";
+import ListItems from "../../components/ListItems";
 import Navbar from "../../components/Navbar";
 import { primaryItems, secondaryItems } from "../../constants/more";
 
@@ -8,7 +8,7 @@ const More = () => {
       <h1 className="text-black b2">More</h1>
       <div className="flex flex-col gap-3">
         {primaryItems.map((item, index) => (
-          <ActionsCard
+          <ListItems
             key={item.title}
             {...item}
             isLast={index === primaryItems.length - 1}
@@ -18,7 +18,7 @@ const More = () => {
       <div className="h-1.5 bg-alice-blue -mx-4" />
       <div className="flex flex-col gap-3">
         {secondaryItems.map((item, index) => (
-          <ActionsCard
+          <ListItems
             key={item.title}
             {...item}
             isLast={index === secondaryItems.length - 1}

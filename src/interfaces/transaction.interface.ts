@@ -1,7 +1,7 @@
-import type { ActionsCardProps } from "./actionsCard.interface";
+import type { ListItemsProps } from "./listItems.interface";
 
 export interface Transaction {
   label: string;
   subLabel?: string;
-  transactions: ActionsCardProps[];
+  transactions: ListItemsProps[];
 }

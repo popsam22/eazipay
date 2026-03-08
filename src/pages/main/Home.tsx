@@ -7,12 +7,15 @@ import add_icon from "../../assets/add-line.svg";
 import steve_icon from "../../assets/Face=Face 2, Size=64.svg";
 import ahmed_icon from "../../assets/Face=Face 3, Size=64.svg";
 import susan_icon from "../../assets/Face=Face 4, Size=64.svg";
-import ActionsCard from "../../components/ActionsCard";
+import { useNavigate } from "react-router-dom";
+import ListItems from "../../components/ListItems";
 import Navbar from "../../components/Navbar";
 import walmart_icon from "../../assets/Wallmart.svg";
 import topup from "../../assets/Topup.svg";
 import netflix_icon from "../../assets/Netflix.svg";
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className="bg-indigo py-6 px-4 flex flex-col gap-4">
@@ -29,6 +32,7 @@ const Home = () => {
             src={settings}
             alt="settings icon"
             className="object-contain w-6 h-6 cursor-pointer"
+            onClick={() => navigate("/settings")}
           />
         </div>
         <div
@@ -116,23 +120,23 @@ const Home = () => {
         <div className="flex flex-col gap-4 mt-4 mb-20">
           <div className="flex justify-between">
             <h1 className="b6 text-black">Latest Transactions</h1>
-            <button className="text-[#6B6B6B] r7">View all</button>
+            <button className="text-[#6B6B6B] r7" onClick={() => navigate("/history")}>View all</button>
           </div>
           <div className="flex flex-col gap-3">
-            <ActionsCard
+            <ListItems
               icon={walmart_icon}
               title="Walmart"
               subtitle="Today 12:32"
               value="-$35.23"
             />
-            <ActionsCard
+            <ListItems
               icon={topup}
               title="Top up"
               subtitle="Yesterday 02:12"
               value="+$430.00"
               type="profit"
             />
-            <ActionsCard
+            <ListItems
               icon={netflix_icon}
               title="Netflix"
               subtitle="Dec 24 13:53"

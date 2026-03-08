@@ -1,16 +1,18 @@
 import arrow_right from "../assets/arrow-right-s-line.svg";
-import type { ActionsCardProps } from "../interfaces/actionsCard.interface";
+import type { ListItemsProps } from "../interfaces/listItems.interface";
 
-const ActionsCard = ({
+const ListItems = ({
   title,
   subtitle,
   value,
   type,
   icon,
   iconBg,
+  label,
+  actionLabel,
   isLast,
   onClick,
-}: ActionsCardProps) => {
+}: ListItemsProps) => {
   const valueColor =
     type === "profit" ? "text-sea-green" : "text-golden-gate-bridge";
 
@@ -29,13 +31,18 @@ const ActionsCard = ({
             />
           </div>
           <div>
+            {label && <p className="r7 text-slate-gray">{label}</p>}
             <h1 className="b7 text-black">{title}</h1>
             {subtitle && <p className="r7 text-slate-gray">{subtitle}</p>}
           </div>
         </div>
         <button className="flex gap-1 items-center" onClick={onClick}>
           {value && <p className={`r7 ${valueColor}`}>{value}</p>}
-          <img src={arrow_right} alt="arrow right icon" className="w-4 h-4" />
+          {actionLabel ? (
+            <p className="r7 text-celtic-blue cursor-pointer">{actionLabel}</p>
+          ) : (
+            <img src={arrow_right} alt="arrow right icon" className="w-4 h-4" />
+          )}
         </button>
       </div>
       {!isLast && <hr className="border-t border-[#E0E0E0] mt-3" />}
@@ -43,4 +50,4 @@ const ActionsCard = ({
   );
 };
 
-export default ActionsCard;
+export default ListItems;
