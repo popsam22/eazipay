@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import app_icon from "../../assets/Group 4.svg";
-import check_icon from "../../assets/checkbox-circle-line.svg";
-import Button from "../../components/Button";
+import app_icon from "@/assets/Group 4.svg";
+import check_icon from "@/assets/checkbox-circle-line.svg";
+import Button from "@/components/Button";
 
 const OTP = () => {
   const [otp, setOtp] = useState("");

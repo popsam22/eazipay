@@ -1,13 +1,13 @@
-import app_icon from "../../assets/Group 4.svg";
-import TextInput from "../../components/TextInput";
-import show_password from "../../assets/eye-off-line.svg";
-import hide_password from "../../assets/eye-line.svg";
+import app_icon from "@/assets/Group 4.svg";
+import TextInput from "@/components/TextInput";
+import show_password from "@/assets/eye-off-line.svg";
+import hide_password from "@/assets/eye-line.svg";
 import { useState } from "react";
-import Button from "../../components/Button";
-import SocialMediaContainer from "../../components/SocialMediaContainer";
-import facebook_icon from "../../assets/Facebook_f_logo_(2019) 1.svg";
-import apple_icon from "../../assets/Frame 4.svg";
-import google_icon from "../../assets/g1520.svg";
+import Button from "@/components/Button";
+import SocialMediaContainer from "@/components/SocialMediaContainer";
+import facebook_icon from "@/assets/Facebook_f_logo_(2019) 1.svg";
+import apple_icon from "@/assets/Frame 4.svg";
+import google_icon from "@/assets/g1520.svg";
 import { useNavigate } from "react-router-dom";
 
 const CreateAccount = () => {

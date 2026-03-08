@@ -1,5 +1,5 @@
-import arrow_right from "../assets/arrow-right-s-line.svg";
-import type { ListItemsProps } from "../interfaces/listItems.interface";
+import arrow_right from "@/assets/arrow-right-s-line.svg";
+import type { ListItemsProps } from "@/interfaces/listItems.interface";
 
 const ListItems = ({
   title,

@@ -1,6 +1,6 @@
-import ListItems from "../../components/ListItems";
-import Navbar from "../../components/Navbar";
-import { primaryItems, secondaryItems } from "../../constants/more";
+import ListItems from "@/components/ListItems";
+import Navbar from "@/components/Navbar";
+import { primaryItems, secondaryItems } from "@/constants/more";
 
 const More = () => {
   return (

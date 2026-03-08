@@ -1,10 +1,10 @@
-import walmart_icon from "../assets/Wallmart.svg";
-import topup_icon from "../assets/Topup.svg";
-import netflix_icon from "../assets/Netflix.svg";
-import amazon_icon from "../assets/Amazon.svg";
-import nike_icon from "../assets/image 8.svg";
-import homedepot_icon from "../assets/The home depot.svg";
-import type { Transaction } from "../interfaces/transaction.interface";
+import walmart_icon from "@/assets/Wallmart.svg";
+import topup_icon from "@/assets/Topup.svg";
+import netflix_icon from "@/assets/Netflix.svg";
+import amazon_icon from "@/assets/Amazon.svg";
+import nike_icon from "@/assets/image 8.svg";
+import homedepot_icon from "@/assets/The home depot.svg";
+import type { Transaction } from "@/interfaces/transaction.interface";
 
 export const transactionData: Transaction[] = [
   {

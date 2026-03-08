@@ -1,4 +1,4 @@
-import type { SocialMediaContainerProps } from "../interfaces/socialMediaContainer.interface";
+import type { SocialMediaContainerProps } from "@/interfaces/socialMediaContainer.interface";
 
 const SocialMediaContainer = ({ img }: SocialMediaContainerProps) => {
   return (

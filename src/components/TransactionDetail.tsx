@@ -1,6 +1,6 @@
-import copy_icon from "../assets/file-copy-line.svg";
-import flag_icon from "../assets/flag-line.svg";
-import type { TransactionDetailProps } from "../interfaces/transactionDetail.interface";
+import copy_icon from "@/assets/file-copy-line.svg";
+import flag_icon from "@/assets/flag-line.svg";
+import type { TransactionDetailProps } from "@/interfaces/transactionDetail.interface";
 
 const TransactionDetail = ({
   title,
@@ -15,7 +15,7 @@ const TransactionDetail = ({
 }: TransactionDetailProps) => {
   const valueColor =
     type === "profit" ? "text-sea-green" : "text-golden-gate-bridge";
-  const amountBg = type === "profit" ? "bg-[#F0FFF4]" : "bg-[#FFF6F6]";
+  const amountBg = type === "profit" ? "bg-[#F0FFF4]" : "bg-snow";
 
   return (
     <div>

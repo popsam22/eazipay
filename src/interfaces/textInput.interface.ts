@@ -4,4 +4,6 @@ export interface TextInputProps {
   type?: string;
   icon?: string;
   iconOnClick?: () => void;
+  state?: "error" | "success" | "disabled";
+  errorMessage?: string;
 }

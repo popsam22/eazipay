@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { navItems } from "../constants/navbar";
+import { navItems } from "@/constants/navbar";
 
 const Navbar = () => {
   const { pathname } = useLocation();

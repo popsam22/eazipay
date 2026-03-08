@@ -8,7 +8,6 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Sora", "ui-sans-serif", "system-ui", "sans-serif"],
-        funnel: ["Funnel Display", "sans-serif"],
       },
       colors: {
         black: "#191919",
@@ -26,7 +25,34 @@ export default {
         "majorelle-blue": "#6F45E9",
         lavendar: "#E6DDFF",
         "golden-gate-bridge": "#B83232",
-        "sea-green": "#22853E",
+        "sea-green": "#289B4F",
+        "american-purple": "#540F55",
+        violet: "#963898",
+        "pearly-purple": "#B462B6",
+        "bright-gray": "#F2E1F2",
+        powder: "#FFF6FF",
+        "dark-bronze": "#875202",
+        golden: "#DDA921",
+        mango: "#FDC228",
+        blond: "#FFECBA",
+        "floral-white": "#FFFAEC",
+        maroon: "#6F1212",
+        "jelly-bean": "#E05555",
+        "pale-pink": "#FFD6D6",
+        snow: "#FFF6F6",
+        "la-salle-green": "#117031",
+        "bright-green": "#E6F6EC",
+        "mint-cream": "#F4FFF8",
+        grass: "#0B453B",
+        emerald: "#2A907E",
+        verdigris: "#4FBCA8",
+        "columbia-blue": "#C9EBE5",
+        bubbles: "#E9FFFB",
+        "catalina-blue": "#0D3674",
+        "bleu-de-france": "#3B85F3",
+        cloud: "#E4EFFF",
+        "ghost-white": "#F5F9FF",
+        white: "#FFFFFF",
       },
       borderRadius: {
         sm: "4px",
@@ -112,6 +138,14 @@ export default {
         },
         ".inactive-icon": {
           filter: "brightness(0) opacity(70%)",
+        },
+        ".error-icon": {
+          filter:
+            "brightness(0) saturate(100%) invert(24%) sepia(81%) saturate(1014%) hue-rotate(327deg) brightness(96%) contrast(96%)",
+        },
+        ".success-icon": {
+          filter:
+            "brightness(0) saturate(100%) invert(56%) sepia(32%) saturate(761%) hue-rotate(97deg) brightness(97%) contrast(89%)",
         },
       });
     }),

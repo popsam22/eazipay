@@ -1,18 +1,18 @@
-import profile_picture from "../../assets/Profile photo.svg";
-import settings from "../../assets/settings-3-line.svg";
-import topup_icon from "../../assets/upload-line.svg";
-import transfer_icon from "../../assets/exchange-funds-line.svg";
-import withdraw_icon from "../../assets/download-line.svg";
-import add_icon from "../../assets/add-line.svg";
-import steve_icon from "../../assets/Face=Face 2, Size=64.svg";
-import ahmed_icon from "../../assets/Face=Face 3, Size=64.svg";
-import susan_icon from "../../assets/Face=Face 4, Size=64.svg";
+import profile_picture from "@/assets/Profile photo.svg";
+import settings from "@/assets/settings-3-line.svg";
+import topup_icon from "@/assets/upload-line.svg";
+import transfer_icon from "@/assets/exchange-funds-line.svg";
+import withdraw_icon from "@/assets/download-line.svg";
+import add_icon from "@/assets/add-line.svg";
+import steve_icon from "@/assets/Face=Face 2, Size=64.svg";
+import ahmed_icon from "@/assets/Face=Face 3, Size=64.svg";
+import susan_icon from "@/assets/Face=Face 4, Size=64.svg";
 import { useNavigate } from "react-router-dom";
-import ListItems from "../../components/ListItems";
-import Navbar from "../../components/Navbar";
-import walmart_icon from "../../assets/Wallmart.svg";
-import topup from "../../assets/Topup.svg";
-import netflix_icon from "../../assets/Netflix.svg";
+import ListItems from "@/components/ListItems";
+import Navbar from "@/components/Navbar";
+import walmart_icon from "@/assets/Wallmart.svg";
+import topup from "@/assets/Topup.svg";
+import netflix_icon from "@/assets/Netflix.svg";
 const Home = () => {
   const navigate = useNavigate();
 

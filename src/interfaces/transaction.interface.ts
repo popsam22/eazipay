@@ -1,4 +1,4 @@
-import type { ListItemsProps } from "./listItems.interface";
+import type { ListItemsProps } from "@/interfaces/listItems.interface";
 
 export interface Transaction {
   label: string;

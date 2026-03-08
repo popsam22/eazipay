@@ -1,4 +1,4 @@
-import type { ButtonProps } from "../interfaces/button.interface";
+import type { ButtonProps } from "@/interfaces/button.interface";
 
 const Button = ({ title, bgColor = "bg-ocean-blue", onClick }: ButtonProps) => {
   return (

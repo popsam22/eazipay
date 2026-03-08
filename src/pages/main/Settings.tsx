@@ -1,14 +1,14 @@
-import profile_picture from "../../assets/Profile photo.svg";
-import shield_icon from "../../assets/shield-check-fill.png";
-import ListItems from "../../components/ListItems";
-import { settingsItems } from "../../constants/settings";
+import profile_picture from "@/assets/Profile photo.svg";
+import shield_icon from "@/assets/shield-check-fill.png";
+import ListItems from "@/components/ListItems";
+import { settingsItems } from "@/constants/settings";
 
 export const Settings = () => {
   return (
     <div className="py-6 px-4 flex flex-col gap-10">
       <h1 className="text-black b5 text-center">Profile Settings</h1>
       <div className="mt-5 flex flex-col gap-2 items-center">
-        <div className="relative border-2 border-[#4FBCA8] rounded-full">
+        <div className="relative border-2 border-verdigris rounded-full">
           <img
             src={profile_picture}
             alt="profile picture"

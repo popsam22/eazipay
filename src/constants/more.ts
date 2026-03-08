@@ -1,12 +1,12 @@
-import pay_bills_icon from "../assets/more-pay-bills.svg";
-import transfer_icon from "../assets/more-transfer.svg";
-import topup_icon from "../assets/more-topup.svg";
-import withdrawal_icon from "../assets/more-withdrawal.svg";
-import analytics_icon from "../assets/more-analytics.svg";
-import help_icon from "../assets/more-help.svg";
-import contact_icon from "../assets/more-contact-us.svg";
-import about_icon from "../assets/more-about.svg";
-import type { ListItemsProps } from "../interfaces/listItems.interface";
+import pay_bills_icon from "@/assets/more-pay-bills.svg";
+import transfer_icon from "@/assets/more-transfer.svg";
+import topup_icon from "@/assets/more-topup.svg";
+import withdrawal_icon from "@/assets/more-withdrawal.svg";
+import analytics_icon from "@/assets/more-analytics.svg";
+import help_icon from "@/assets/more-help.svg";
+import contact_icon from "@/assets/more-contact-us.svg";
+import about_icon from "@/assets/more-about.svg";
+import type { ListItemsProps } from "@/interfaces/listItems.interface";
 
 export const primaryItems: ListItemsProps[] = [
   { title: "Pay bills", icon: pay_bills_icon, iconBg: "#E6DDFF" },

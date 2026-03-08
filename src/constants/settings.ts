@@ -1,8 +1,8 @@
-import name_icon from "../assets/settings-name.svg";
-import phone_icon from "../assets/settings-phone.svg";
-import mail_icon from "../assets/settings-mail.svg";
-import password_icon from "../assets/settings-password.svg";
-import type { ListItemsProps } from "../interfaces/listItems.interface";
+import name_icon from "@/assets/settings-name.svg";
+import phone_icon from "@/assets/settings-phone.svg";
+import mail_icon from "@/assets/settings-mail.svg";
+import password_icon from "@/assets/settings-password.svg";
+import type { ListItemsProps } from "@/interfaces/listItems.interface";
 
 export const settingsItems: ListItemsProps[] = [
   { label: "Full name", title: "Abdullah Ghatasheh", icon: name_icon, iconBg: "#E6DDFF", actionLabel: "Edit" },

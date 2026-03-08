@@ -1,11 +1,11 @@
 import { useState } from "react";
-import search_icon from "../../assets/search-2-line.svg";
-import filter_icon from "../../assets/equalizer-line.svg";
-import ListItems from "../../components/ListItems";
-import Navbar from "../../components/Navbar";
-import TransactionDetail from "../../components/TransactionDetail";
-import { transactionData } from "../../constants/transaction";
-import type { ListItemsProps } from "../../interfaces/listItems.interface";
+import search_icon from "@/assets/search-2-line.svg";
+import filter_icon from "@/assets/equalizer-line.svg";
+import ListItems from "@/components/ListItems";
+import Navbar from "@/components/Navbar";
+import TransactionDetail from "@/components/TransactionDetail";
+import { transactionData } from "@/constants/transaction";
+import type { ListItemsProps } from "@/interfaces/listItems.interface";
 
 const History = () => {
   const [selected, setSelected] = useState<ListItemsProps | null>(null);

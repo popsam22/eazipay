@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import Login from "./pages/auth/Login";
-import CreateAccount from "./pages/auth/CreateAccount";
-import OTP from "./pages/auth/OTP";
-import Home from "./pages/main/Home";
-import History from "./pages/main/History";
-import More from "./pages/main/More";
-import { Settings } from "./pages/main/Settings";
+import Login from "@/pages/auth/Login";
+import CreateAccount from "@/pages/auth/CreateAccount";
+import OTP from "@/pages/auth/OTP";
+import Home from "@/pages/main/Home";
+import History from "@/pages/main/History";
+import More from "@/pages/main/More";
+import { Settings } from "@/pages/main/Settings";
 
 function App() {
   return (

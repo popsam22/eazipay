@@ -1,18 +1,17 @@
-import app_icon from "../../assets/Group 4.svg";
-import login_icon from "../../assets/Group 10.svg";
-import password_screen_icon from "../../assets/Group 9.svg";
-import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
+import app_icon from "@/assets/Group 4.svg";
+import login_icon from "@/assets/Group 10.svg";
+import password_screen_icon from "@/assets/Group 9.svg";
 import { useState } from "react";
-import Button from "../../components/Button";
-import SocialMediaContainer from "../../components/SocialMediaContainer";
-import facebook_icon from "../../assets/Facebook_f_logo_(2019) 1.svg";
-import apple_icon from "../../assets/Frame 4.svg";
-import google_icon from "../../assets/g1520.svg";
-import TextInput from "../../components/TextInput";
-import show_password from "../../assets/eye-off-line.svg";
-import hide_password from "../../assets/eye-line.svg";
-import ForgotPassword from "./ForgotPassword";
+import Button from "@/components/Button";
+import SocialMediaContainer from "@/components/SocialMediaContainer";
+import facebook_icon from "@/assets/Facebook_f_logo_(2019) 1.svg";
+import apple_icon from "@/assets/Frame 4.svg";
+import google_icon from "@/assets/g1520.svg";
+import TextInput from "@/components/TextInput";
+import PhoneInputField from "@/components/PhoneInputField";
+import show_password from "@/assets/eye-off-line.svg";
+import hide_password from "@/assets/eye-line.svg";
+import ForgotPassword from "@/pages/auth/ForgotPassword";
 
 const Login = () => {
   const [phone, setPhone] = useState("");
@@ -45,34 +44,11 @@ const Login = () => {
         <div className="flex flex-col p-4 gap-12">
           <div className="flex flex-col gap-6">
             <h1 className="text-black b3 w-1/2">Enter your mobile number</h1>
-            <div className="flex flex-col w-full gap-1">
-              <label htmlFor="phone-number" className="r7 text-black">
-                Mobile number
-              </label>
-              <div className="flex border border-azureish-white p-3 rounded-lg w-full items-center">
-                <PhoneInput
-                  international
-                  defaultCountry="NG"
-                  value={phone}
-                  onChange={(value) => setPhone(value || "")}
-                  className="w-full border-0 outline-0"
-                  style={
-                    {
-                      "--PhoneInputCountryFlag-height": "20px",
-                      "--PhoneInputCountryFlag-width": "30px",
-                      "--PhoneInputCountrySelectArrow-color": "#191919",
-                      "--PhoneInput-color--focus": "#075AAA",
-                    } as React.CSSProperties
-                  }
-                  countrySelectProps={{ style: { color: "#191919" } }}
-                  numberInputProps={{
-                    className:
-                      "flex-1 outline-none r6 placeholder:text-silver-sand border-0 ml-2",
-                    placeholder: "7X-XXXXXXX",
-                  }}
-                />
-              </div>
-            </div>
+            <PhoneInputField
+              label="Mobile number"
+              value={phone}
+              onChange={setPhone}
+            />
           </div>
           <div className="flex flex-col gap-6">
             <Button
