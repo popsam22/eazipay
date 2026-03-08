@@ -22,6 +22,11 @@ export default {
         "ocean-blue": "#5732BF",
         "celtic-blue": "#1D62CA",
         shamrock: "#4DA66B",
+        indigo: "#270685",
+        "majorelle-blue": "#6F45E9",
+        lavendar: "#E6DDFF",
+        "golden-gate-bridge": "#B83232",
+        "sea-green": "#22853E",
       },
       borderRadius: {
         sm: "4px",
@@ -100,6 +105,13 @@ export default {
           "font-size": "12px",
           "font-weight": "400",
           "line-height": "1.5",
+        },
+        ".active-icon": {
+          filter:
+            "brightness(0) saturate(100%) invert(32%) sepia(88%) saturate(1200%) hue-rotate(238deg) brightness(97%) contrast(97%)",
+        },
+        ".inactive-icon": {
+          filter: "brightness(0) opacity(70%)",
         },
       });
     }),
