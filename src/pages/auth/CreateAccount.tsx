@@ -35,7 +35,8 @@ const CreateAccount = () => {
       <img
         src={app_icon}
         alt="app icon"
-        className="object-contain w-[88.14px] h-6 mb-5"
+        className="object-contain w-[88.14px] h-6 mb-5 cursor-pointer"
+        onClick={() => navigate("/")}
       />
       <div className="flex flex-col gap-12 w-full">
         <div className="flex flex-col gap-6">

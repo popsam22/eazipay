@@ -14,8 +14,10 @@ import hide_password from "@/assets/eye-line.svg";
 import ForgotPassword from "@/pages/auth/ForgotPassword";
 import { validatePhoneNumber } from "@/validations/phone.validator";
 import { validatePassword } from "@/validations/password.validator";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [displayPasswordScreen, setDisplayPasswordScreen] = useState(false);
@@ -102,7 +104,16 @@ const Login = () => {
               Forgot password?
             </p>
           </div>
-          <Button title="Login" onClick={() => ""} disabled={!validatePassword(password)} />
+          <Button title="Login" onClick={() => navigate("/home")} disabled={!validatePassword(password)} />
+          <p className="r7 text-slate-gray text-center">
+            Don't have an account?{" "}
+            <span
+              className="text-celtic-blue b6 cursor-pointer"
+              onClick={() => navigate("/create-account")}
+            >
+              Sign up
+            </span>
+          </p>
         </div>
       )}
       {showForgotPassword && (
