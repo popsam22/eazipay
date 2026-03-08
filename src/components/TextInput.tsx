@@ -6,10 +6,13 @@ const TextInput = ({
   label,
   placeholder,
   type = "text",
+  value,
+  onChange,
   icon,
   iconOnClick,
   state,
   errorMessage,
+  required,
 }: TextInputProps) => {
   const borderClass =
     state === "error"
@@ -38,12 +41,16 @@ const TextInput = ({
 
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-black r7">{label}</label>
+      <label className="text-black r7">
+        {label} {required && <span className="text-[#FF5F57]">*</span>}
+      </label>
       <div
         className={`flex justify-between border ${borderClass} ${bgClass} rounded-sm p-3 gap-2`}
       >
         <input
           type={type}
+          value={value}
+          onChange={onChange ? (e) => onChange(e.target.value) : undefined}
           placeholder={placeholder}
           disabled={state === "disabled"}
           className={`r6 placeholder:text-silver-sand bg-inherit w-full outline-none ${inputTextClass}`}

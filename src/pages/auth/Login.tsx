@@ -12,12 +12,19 @@ import PhoneInputField from "@/components/PhoneInputField";
 import show_password from "@/assets/eye-off-line.svg";
 import hide_password from "@/assets/eye-line.svg";
 import ForgotPassword from "@/pages/auth/ForgotPassword";
+import { validatePhoneNumber } from "@/validations/phone.validator";
+import { validatePassword } from "@/validations/password.validator";
 
 const Login = () => {
   const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
   const [displayPasswordScreen, setDisplayPasswordScreen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showForgotPassword, setShowForgotPassword] = useState(false);
+
+  const phoneValid = validatePhoneNumber(phone);
+  const phoneState = phone ? (phoneValid ? "success" : "error") : undefined;
+
   return (
     <div>
       <div className="w-full flex flex-col bg-mangolia items-center gap-10 p-10">
@@ -48,12 +55,19 @@ const Login = () => {
               label="Mobile number"
               value={phone}
               onChange={setPhone}
+              state={phoneState}
+              errorMessage={
+                phoneState === "error"
+                  ? "Please enter a valid phone number"
+                  : undefined
+              }
             />
           </div>
           <div className="flex flex-col gap-6">
             <Button
               title="Continue"
               onClick={() => setDisplayPasswordScreen(true)}
+              disabled={!phoneValid}
             />
             <div className="w-full flex items-center gap-4">
               <div className="flex-1 h-px bg-alice-blue" />
@@ -75,6 +89,9 @@ const Login = () => {
               label="Password"
               placeholder="Enter your password"
               type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={setPassword}
+              required
               icon={showPassword ? hide_password : show_password}
               iconOnClick={() => setShowPassword(!showPassword)}
             />
@@ -85,7 +102,7 @@ const Login = () => {
               Forgot password?
             </p>
           </div>
-          <Button title="Login" onClick={() => ""} />
+          <Button title="Login" onClick={() => ""} disabled={!validatePassword(password)} />
         </div>
       )}
       {showForgotPassword && (

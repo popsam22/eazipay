@@ -26,7 +26,9 @@ const PhoneInputField = ({
 
   return (
     <div className="flex flex-col gap-1">
-      <label className="r7 text-black">{label}</label>
+      <label className="r7 text-black">
+        {label} <span className="text-[#FF5F57]">*</span>
+      </label>
       <div
         className={`flex border ${borderClass} ${bgClass} p-3 rounded-sm w-full items-center gap-2`}
       >
@@ -48,8 +50,9 @@ const PhoneInputField = ({
           countrySelectProps={{ style: { color: "#191919" } }}
           numberInputProps={{
             className:
-              "flex-1 outline-none r6 placeholder:text-silver-sand border-0 ml-2",
+              "flex-1 outline-none r6 placeholder:text-silver-sand border-0 ml-2 bg-inherit",
             placeholder,
+            style: { outline: "none" },
           }}
         />
         {stateIcon && (
