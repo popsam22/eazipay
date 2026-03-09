@@ -8,10 +8,12 @@ const OTP = () => {
   const navigate = useNavigate();
   const [otp, setOtp] = useState("");
   const [timeLeft, setTimeLeft] = useState(60);
+  const [loading, setLoading] = useState(false);
 
   const isComplete = otp.length === 6;
   const displayValue =
     otp.slice(0, 3) + (otp.length > 3 ? "-" + otp.slice(3) : "");
+
 
   useEffect(() => {
     if (timeLeft <= 0) return;
@@ -28,6 +30,10 @@ const OTP = () => {
   const otpChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const digits = e.target.value.replace(/\D/g, "").slice(0, 6);
     setOtp(digits);
+    if (digits.length === 6) {
+      setLoading(true);
+      setTimeout(() => navigate("/home"), 1500);
+    }
   };
 
   return (
@@ -94,6 +100,7 @@ const OTP = () => {
           title="Done"
           onClick={() => navigate("/home")}
           disabled={!isComplete}
+          loading={loading}
         />
       </div>
     </div>

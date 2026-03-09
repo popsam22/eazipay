@@ -18,7 +18,7 @@ const ListItems = ({
 
   return (
     <div>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center cursor-pointer" onClick={onClick}>
         <div className="flex gap-2 items-center">
           <div
             className="w-8 h-8 rounded-lg flex items-center justify-center"
@@ -36,14 +36,14 @@ const ListItems = ({
             {subtitle && <p className="r7 text-slate-gray dark:text-gray-400">{subtitle}</p>}
           </div>
         </div>
-        <button className="flex gap-1 items-center" onClick={onClick}>
+        <div className="flex gap-1 items-center">
           {value && <p className={`r7 ${valueColor}`}>{value}</p>}
           {actionLabel ? (
-            <p className="r7 text-celtic-blue cursor-pointer">{actionLabel}</p>
+            <p className="r7 text-celtic-blue">{actionLabel}</p>
           ) : (
             <img src={arrow_right} alt="arrow right icon" className="w-4 h-4" />
           )}
-        </button>
+        </div>
       </div>
       {!isLast && <hr className="border-t border-[#E0E0E0] dark:border-gray-700 mt-3" />}
     </div>
