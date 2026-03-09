@@ -29,7 +29,7 @@ const PasswordStrengthIndicator = ({ password }: { password: string }) => {
           {passwordCriteria.map((_, i) => (
             <div
               key={i}
-              className={`h-1 flex-1 rounded-full transition-colors ${i < score ? barColor[score] : "bg-azureish-white"}`}
+              className={`h-1 flex-1 rounded-full transition-colors ${i < score ? barColor[score] : "bg-azureish-white dark:bg-gray-600"}`}
             />
           ))}
         </div>
@@ -41,9 +41,9 @@ const PasswordStrengthIndicator = ({ password }: { password: string }) => {
         {passwordCriteria.map((c, i) => (
           <div key={i} className="flex items-center gap-1">
             <div
-              className={`w-1.5 h-1.5 rounded-full shrink-0 ${results[i] ? "bg-shamrock" : "bg-silver-sand"}`}
+              className={`w-1.5 h-1.5 rounded-full shrink-0 ${results[i] ? "bg-shamrock" : "bg-silver-sand dark:bg-gray-500"}`}
             />
-            <p className={`r7 ${results[i] ? "text-shamrock" : "text-silver-sand"}`}>
+            <p className={`r7 ${results[i] ? "text-shamrock" : "text-silver-sand dark:text-gray-400"}`}>
               {c.label}
             </p>
           </div>

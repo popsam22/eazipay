@@ -35,8 +35,8 @@ const Login = () => {
   const phoneState = phone ? (phoneValid ? "success" : "error") : undefined;
 
   return (
-    <div>
-      <div className="w-full flex flex-col bg-mangolia items-center gap-10 p-10">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      <div className="w-full flex flex-col bg-mangolia dark:bg-gray-800 items-center gap-10 p-10">
         <img
           src={app_icon}
           alt="app icon"
@@ -59,7 +59,7 @@ const Login = () => {
       {!displayPasswordScreen ? (
         <div className="flex flex-col p-4 gap-12">
           <div className="flex flex-col gap-6">
-            <h1 className="text-black b3 w-1/2">Enter your mobile number</h1>
+            <h1 className="text-black dark:text-white b3 w-1/2">Enter your mobile number</h1>
             <PhoneInputField
               label="Mobile number"
               value={phone}
@@ -79,9 +79,9 @@ const Login = () => {
               disabled={!phoneValid}
             />
             <div className="w-full flex items-center gap-4">
-              <div className="flex-1 h-px bg-alice-blue" />
-              <p className="text-slate-gray r7">or continue using</p>
-              <div className="flex-1 h-px bg-alice-blue" />
+              <div className="flex-1 h-px bg-alice-blue dark:bg-gray-700" />
+              <p className="text-slate-gray dark:text-gray-400 r7">or continue using</p>
+              <div className="flex-1 h-px bg-alice-blue dark:bg-gray-700" />
             </div>
             <div className="grid grid-cols-3 gap-4">
               <SocialMediaContainer img={facebook_icon} />
@@ -92,7 +92,7 @@ const Login = () => {
         </div>
       ) : (
         <div className="flex flex-col p-4 gap-6">
-          <h1>Enter your password</h1>
+          <h1 className="text-black dark:text-white b3">Enter your password</h1>
           <div className="flex flex-col gap-4 mb-20">
             <TextInput
               label="Password"
@@ -112,7 +112,7 @@ const Login = () => {
                   checked={rememberMe}
                   onChange={(e) => setRememberMe(e.target.checked)}
                 />
-                <label htmlFor="remember-me" className="r7 text-black cursor-pointer">
+                <label htmlFor="remember-me" className="r7 text-black dark:text-gray-200 cursor-pointer">
                   Remember me
                 </label>
               </div>
@@ -125,7 +125,7 @@ const Login = () => {
             </div>
           </div>
           <Button title="Login" onClick={handleLogin} disabled={!validatePassword(password)} loading={loading} />
-          <p className="r7 text-slate-gray text-center">
+          <p className="r7 text-slate-gray dark:text-gray-400 text-center">
             Don't have an account?{" "}
             <span
               className="text-celtic-blue b6 cursor-pointer"

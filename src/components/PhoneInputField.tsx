@@ -26,11 +26,11 @@ const PhoneInputField = ({
 
   return (
     <div className="flex flex-col gap-1">
-      <label className="r7 text-black">
+      <label className="r7 text-black dark:text-gray-200">
         {label} <span className="text-[#FF5F57]">*</span>
       </label>
       <div
-        className={`flex border ${borderClass} ${bgClass} p-3 rounded-sm w-full items-center gap-2`}
+        className={`flex border ${borderClass} ${bgClass} dark:border-gray-600 p-3 rounded-sm w-full items-center gap-2 ${state !== "disabled" ? "dark:bg-gray-800" : "dark:bg-gray-700"}`}
       >
         <PhoneInput
           international
@@ -50,7 +50,7 @@ const PhoneInputField = ({
           countrySelectProps={{ style: { color: "#191919" } }}
           numberInputProps={{
             className:
-              "flex-1 outline-none r6 placeholder:text-silver-sand border-0 ml-2 bg-inherit",
+              "flex-1 outline-none r6 text-black dark:text-white placeholder:text-silver-sand border-0 ml-2 bg-inherit",
             placeholder,
             style: { outline: "none" },
           }}

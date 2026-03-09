@@ -6,13 +6,15 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-azureish-white flex justify-around">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-azureish-white dark:border-gray-700 flex justify-around" aria-label="Main navigation">
       {navItems.map((item) => {
         const isActive = pathname === item.path;
         return (
           <button
             key={item.path}
             onClick={() => item.path && navigate(item.path)}
+            aria-label={item.label}
+            aria-current={isActive ? "page" : undefined}
             className="relative flex flex-col items-center gap-1 flex-1 p-2"
           >
             {isActive && (
@@ -27,8 +29,9 @@ const Navbar = () => {
             />
             <p
               className={`${
-                isActive ? "text-majorelle-blue b7" : "text-black-coral r7"
+                isActive ? "text-majorelle-blue b7" : "text-black-coral dark:text-gray-400 r7"
               }`}
+              aria-hidden="true"
             >
               {item.label}
             </p>

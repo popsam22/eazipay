@@ -4,8 +4,8 @@ import { primaryItems, secondaryItems } from "@/constants/more";
 
 const More = () => {
   return (
-    <div className="py-6 px-4 flex flex-col gap-6 pb-24">
-      <h1 className="text-black b2">More</h1>
+    <div className="min-h-screen bg-white dark:bg-gray-900 py-6 px-4 flex flex-col gap-6 pb-24">
+      <h1 className="text-black dark:text-white b2">More</h1>
       <div className="flex flex-col gap-3">
         {primaryItems.map((item, index) => (
           <ListItems
@@ -15,7 +15,7 @@ const More = () => {
           />
         ))}
       </div>
-      <div className="h-1.5 bg-alice-blue -mx-4" />
+      <div className="h-1.5 bg-alice-blue dark:bg-gray-700 -mx-4" />
       <div className="flex flex-col gap-3">
         {secondaryItems.map((item, index) => (
           <ListItems

@@ -31,9 +31,9 @@ const ListItems = ({
             />
           </div>
           <div>
-            {label && <p className="r7 text-slate-gray">{label}</p>}
-            <h1 className="b7 text-black">{title}</h1>
-            {subtitle && <p className="r7 text-slate-gray">{subtitle}</p>}
+            {label && <p className="r7 text-slate-gray dark:text-gray-400">{label}</p>}
+            <h1 className="b7 text-black dark:text-white">{title}</h1>
+            {subtitle && <p className="r7 text-slate-gray dark:text-gray-400">{subtitle}</p>}
           </div>
         </div>
         <button className="flex gap-1 items-center" onClick={onClick}>
@@ -45,7 +45,7 @@ const ListItems = ({
           )}
         </button>
       </div>
-      {!isLast && <hr className="border-t border-[#E0E0E0] mt-3" />}
+      {!isLast && <hr className="border-t border-[#E0E0E0] dark:border-gray-700 mt-3" />}
     </div>
   );
 };

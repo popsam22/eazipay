@@ -31,7 +31,7 @@ const CreateAccount = () => {
   const canSubmit = !!name && emailValid && validatePassword(password);
 
   return (
-    <div className="w-full flex flex-col bg-white items-center gap-10 p-4">
+    <div className="w-full min-h-screen flex flex-col bg-white dark:bg-gray-900 items-center gap-10 p-4">
       <img
         src={app_icon}
         alt="app icon"
@@ -40,7 +40,7 @@ const CreateAccount = () => {
       />
       <div className="flex flex-col gap-12 w-full">
         <div className="flex flex-col gap-6">
-          <h1 className="text-black b3">Create Account</h1>
+          <h1 className="text-black dark:text-white b3">Create Account</h1>
           <TextInput
             label="Name"
             placeholder="e.g. John Doe"
@@ -72,7 +72,7 @@ const CreateAccount = () => {
           </div>
           <div className="flex gap-1 items-center">
             <input type="checkbox" />
-            <p className="r7 text-black whitespace-nowrap">
+            <p className="r7 text-black dark:text-gray-200 whitespace-nowrap">
               I accept{" "}
               <span className=" text-celtic-blue">terms and conditions</span>{" "}
               and <span className="text-celtic-blue">privacy policy</span>
@@ -86,9 +86,9 @@ const CreateAccount = () => {
             disabled={!canSubmit}
           />
           <div className="w-full flex items-center gap-4">
-            <div className="flex-1 h-px bg-alice-blue" />
-            <p className="text-slate-gray r7">or continue using</p>
-            <div className="flex-1 h-px bg-alice-blue" />
+            <div className="flex-1 h-px bg-alice-blue dark:bg-gray-700" />
+            <p className="text-slate-gray dark:text-gray-400 r7">or continue using</p>
+            <div className="flex-1 h-px bg-alice-blue dark:bg-gray-700" />
           </div>
           <div className="grid grid-cols-3 gap-4">
             <SocialMediaContainer img={facebook_icon} />

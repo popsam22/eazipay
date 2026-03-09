@@ -12,19 +12,21 @@ import ListItems from "@/components/ListItems";
 import Navbar from "@/components/Navbar";
 import { flatTransactions } from "@/constants/transaction";
 import useCountUp from "@/hooks/useCountUp";
+import { useDarkModeContext } from "@/contexts/DarkModeContext";
 
 const recentTransactions = flatTransactions.slice(0, 3);
 const BALANCE = 14235.34;
 
 const Home = () => {
   const navigate = useNavigate();
+  const { isDark, toggle } = useDarkModeContext();
   const animatedBalance = useCountUp(BALANCE);
   const integerPart = Math.floor(animatedBalance).toLocaleString("en-US");
   const decimalPart = (animatedBalance % 1).toFixed(2).slice(1);
 
   return (
-    <div>
-      <div className="bg-indigo py-6 px-4 flex flex-col gap-4">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      <div className="bg-indigo dark:bg-gray-800 py-6 px-4 flex flex-col gap-4">
         <div className="flex justify-between">
           <div className="flex gap-2 ">
             <img
@@ -34,12 +36,25 @@ const Home = () => {
             />
             <p className="b6 text-white max-w-[40%]">Hello, Abdullah!</p>
           </div>
-          <img
-            src={settings}
-            alt="settings icon"
-            className="object-contain w-6 h-6 cursor-pointer"
-            onClick={() => navigate("/settings")}
-          />
+          <div className="flex items-center gap-3">
+            <button
+              onClick={toggle}
+              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+              className="relative w-10 h-5 rounded-full transition-colors focus:outline-none bg-white/20"
+            >
+              <span
+                className={`absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform ${
+                  isDark ? "translate-x-5" : "translate-x-0"
+                }`}
+              />
+            </button>
+            <img
+              src={settings}
+              alt="settings icon"
+              className="object-contain w-6 h-6 cursor-pointer"
+              onClick={() => navigate("/settings")}
+            />
+          </div>
         </div>
         <div
           className="border border-indigo rounded-2xl py-6 px-8 flex flex-col items-center gap-4"
@@ -73,7 +88,7 @@ const Home = () => {
       </div>
       <div className="flex flex-col py-6 px-4 gap-4">
         <div className="flex flex-col gap-4">
-          <h1 className="text-black b6">Recent Transfers</h1>
+          <h1 className="text-black dark:text-white b6">Recent Transfers</h1>
           <div className="flex gap-4">
             <div className="flex flex-col gap-2 items-center">
               <div className="flex rounded-full bg-lavendar w-16 h-16 justify-center items-center">
@@ -83,7 +98,7 @@ const Home = () => {
                   className="object-contain w-6 h-6"
                 />
               </div>
-              <p className="r7 text-black">Add</p>
+              <p className="r7 text-black dark:text-gray-200">Add</p>
             </div>
             <div className="flex flex-col gap-2 items-center">
               <img
@@ -91,7 +106,7 @@ const Home = () => {
                 alt="add transfers icon"
                 className="object-contain w-16 h-16"
               />
-              <p className="r7 text-black">Ali</p>
+              <p className="r7 text-black dark:text-gray-200">Ali</p>
             </div>
             <div className="flex flex-col gap-2 items-center">
               <img
@@ -99,7 +114,7 @@ const Home = () => {
                 alt="add transfers icon"
                 className="object-contain w-16 h-16"
               />
-              <p className="r7 text-black">Steve</p>
+              <p className="r7 text-black dark:text-gray-200">Steve</p>
             </div>
             <div className="flex flex-col gap-2 items-center">
               <img
@@ -107,7 +122,7 @@ const Home = () => {
                 alt="add transfers icon"
                 className="object-contain w-16 h-16"
               />
-              <p className="r7 text-black">Ahmed</p>
+              <p className="r7 text-black dark:text-gray-200">Ahmed</p>
             </div>
             <div className="flex flex-col gap-2 items-center">
               <img
@@ -115,15 +130,15 @@ const Home = () => {
                 alt="add transfers icon"
                 className="object-contain w-16 h-16"
               />
-              <p className="r7 text-black">Susan</p>
+              <p className="r7 text-black dark:text-gray-200">Susan</p>
             </div>
           </div>
         </div>
         <div className="flex flex-col gap-4 mt-4 mb-20">
           <div className="flex justify-between items-center">
-            <h1 className="b6 text-black">Latest Transactions</h1>
+            <h1 className="b6 text-black dark:text-white">Latest Transactions</h1>
             <button
-              className="text-[#6B6B6B] r7"
+              className="text-[#6B6B6B] dark:text-gray-400 r7"
               onClick={() => navigate("/history")}
             >
               View all
