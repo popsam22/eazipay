@@ -11,11 +11,16 @@ import { useNavigate } from "react-router-dom";
 import ListItems from "@/components/ListItems";
 import Navbar from "@/components/Navbar";
 import { flatTransactions } from "@/constants/transaction";
+import useCountUp from "@/hooks/useCountUp";
 
 const recentTransactions = flatTransactions.slice(0, 3);
+const BALANCE = 14235.34;
 
 const Home = () => {
   const navigate = useNavigate();
+  const animatedBalance = useCountUp(BALANCE);
+  const integerPart = Math.floor(animatedBalance).toLocaleString("en-US");
+  const decimalPart = (animatedBalance % 1).toFixed(2).slice(1);
 
   return (
     <div>
@@ -45,7 +50,7 @@ const Home = () => {
           <div className="text-center">
             <h1 className="text-[#B2A1E4] r7">Main balance</h1>
             <p className="text-white b1">
-              $14,235<span className="r4">.34</span>
+              ${integerPart}<span className="r4">{decimalPart}</span>
             </p>
           </div>
           <div className="flex justify-between items-center w-full">
