@@ -3,4 +3,5 @@ export interface ButtonProps {
   onClick: () => void;
   bgColor?: string;
   disabled?: boolean;
+  loading?: boolean;
 }

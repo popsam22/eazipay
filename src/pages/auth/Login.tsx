@@ -23,6 +23,13 @@ const Login = () => {
   const [displayPasswordScreen, setDisplayPasswordScreen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleLogin = () => {
+    setLoading(true);
+    setTimeout(() => navigate("/home"), 1500);
+  };
 
   const phoneValid = validatePhoneNumber(phone);
   const phoneState = phone ? (phoneValid ? "success" : "error") : undefined;
@@ -97,14 +104,27 @@ const Login = () => {
               icon={showPassword ? hide_password : show_password}
               iconOnClick={() => setShowPassword(!showPassword)}
             />
-            <p
-              className="text-celtic-blue b6 text-end cursor-pointer"
-              onClick={() => setShowForgotPassword(true)}
-            >
-              Forgot password?
-            </p>
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  id="remember-me"
+                  checked={rememberMe}
+                  onChange={(e) => setRememberMe(e.target.checked)}
+                />
+                <label htmlFor="remember-me" className="r7 text-black cursor-pointer">
+                  Remember me
+                </label>
+              </div>
+              <p
+                className="text-celtic-blue b6 cursor-pointer"
+                onClick={() => setShowForgotPassword(true)}
+              >
+                Forgot password?
+              </p>
+            </div>
           </div>
-          <Button title="Login" onClick={() => navigate("/home")} disabled={!validatePassword(password)} />
+          <Button title="Login" onClick={handleLogin} disabled={!validatePassword(password)} loading={loading} />
           <p className="r7 text-slate-gray text-center">
             Don't have an account?{" "}
             <span

@@ -1,12 +1,16 @@
 import type { ButtonProps } from "@/interfaces/button.interface";
 
-const Button = ({ title, bgColor = "bg-ocean-blue", onClick, disabled }: ButtonProps) => {
+const Button = ({ title, bgColor = "bg-ocean-blue", onClick, disabled, loading }: ButtonProps) => {
+  const isDisabled = disabled || loading;
   return (
     <button
       onClick={onClick}
-      disabled={disabled}
-      className={`w-full flex p-3 ${bgColor} rounded-sm justify-center ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
+      disabled={isDisabled}
+      className={`w-full flex p-3 ${bgColor} rounded-sm justify-center items-center gap-2 ${isDisabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
     >
+      {loading && (
+        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+      )}
       <h1 className="text-white b6">{title}</h1>
     </button>
   );

@@ -10,9 +10,10 @@ import susan_icon from "@/assets/Face=Face 4, Size=64.svg";
 import { useNavigate } from "react-router-dom";
 import ListItems from "@/components/ListItems";
 import Navbar from "@/components/Navbar";
-import walmart_icon from "@/assets/Wallmart.svg";
-import topup from "@/assets/Topup.svg";
-import netflix_icon from "@/assets/Netflix.svg";
+import { flatTransactions } from "@/constants/transaction";
+
+const recentTransactions = flatTransactions.slice(0, 3);
+
 const Home = () => {
   const navigate = useNavigate();
 
@@ -85,7 +86,6 @@ const Home = () => {
                 alt="add transfers icon"
                 className="object-contain w-16 h-16"
               />
-
               <p className="r7 text-black">Ali</p>
             </div>
             <div className="flex flex-col gap-2 items-center">
@@ -94,7 +94,6 @@ const Home = () => {
                 alt="add transfers icon"
                 className="object-contain w-16 h-16"
               />
-
               <p className="r7 text-black">Steve</p>
             </div>
             <div className="flex flex-col gap-2 items-center">
@@ -103,7 +102,6 @@ const Home = () => {
                 alt="add transfers icon"
                 className="object-contain w-16 h-16"
               />
-
               <p className="r7 text-black">Ahmed</p>
             </div>
             <div className="flex flex-col gap-2 items-center">
@@ -112,37 +110,28 @@ const Home = () => {
                 alt="add transfers icon"
                 className="object-contain w-16 h-16"
               />
-
               <p className="r7 text-black">Susan</p>
             </div>
           </div>
         </div>
         <div className="flex flex-col gap-4 mt-4 mb-20">
-          <div className="flex justify-between">
+          <div className="flex justify-between items-center">
             <h1 className="b6 text-black">Latest Transactions</h1>
-            <button className="text-[#6B6B6B] r7" onClick={() => navigate("/history")}>View all</button>
+            <button
+              className="text-[#6B6B6B] r7"
+              onClick={() => navigate("/history")}
+            >
+              View all
+            </button>
           </div>
           <div className="flex flex-col gap-3">
-            <ListItems
-              icon={walmart_icon}
-              title="Walmart"
-              subtitle="Today 12:32"
-              value="-$35.23"
-            />
-            <ListItems
-              icon={topup}
-              title="Top up"
-              subtitle="Yesterday 02:12"
-              value="+$430.00"
-              type="profit"
-            />
-            <ListItems
-              icon={netflix_icon}
-              title="Netflix"
-              subtitle="Dec 24 13:53"
-              value="-$13.00"
-              isLast
-            />
+            {recentTransactions.map((t, i) => (
+              <ListItems
+                key={t.transactionNo}
+                {...t}
+                isLast={i === recentTransactions.length - 1}
+              />
+            ))}
           </div>
         </div>
       </div>
