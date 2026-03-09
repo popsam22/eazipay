@@ -2,14 +2,16 @@ import profile_picture from "@/assets/Profile photo.svg";
 import shield_icon from "@/assets/shield-check-fill.png";
 import ListItems from "@/components/ListItems";
 import { settingsItems } from "@/constants/settings";
-import { useDarkModeContext } from "@/contexts/DarkModeContext";
+import { useDarkModeContext } from "@/context/DarkModeContext";
 
 export const Settings = () => {
   const { isDark, toggle } = useDarkModeContext();
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 py-6 px-4 flex flex-col gap-10">
-      <h1 className="text-black dark:text-white b5 text-center">Profile Settings</h1>
+      <h1 className="text-black dark:text-white b5 text-center">
+        Profile Settings
+      </h1>
       <div className="mt-5 flex flex-col gap-2 items-center">
         <div className="relative border-2 border-verdigris rounded-full">
           <img
@@ -25,7 +27,9 @@ export const Settings = () => {
         </div>
         <div className="text-center">
           <h1 className="b6 text-black dark:text-white">Abdullah Ghatasheh</h1>
-          <h2 className="r7 text-slate-gray dark:text-gray-400">Joined 2 years ago</h2>
+          <h2 className="r7 text-slate-gray dark:text-gray-400">
+            Joined 2 years ago
+          </h2>
         </div>
       </div>
       <div className="flex flex-col gap-3 mt-4">

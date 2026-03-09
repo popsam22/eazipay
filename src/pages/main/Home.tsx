@@ -12,7 +12,7 @@ import ListItems from "@/components/ListItems";
 import Navbar from "@/components/Navbar";
 import { flatTransactions } from "@/constants/transaction";
 import useCountUp from "@/hooks/useCountUp";
-import { useDarkModeContext } from "@/contexts/DarkModeContext";
+import { useDarkModeContext } from "@/context/DarkModeContext";
 
 const recentTransactions = flatTransactions.slice(0, 3);
 const BALANCE = 14235.34;
@@ -39,7 +39,9 @@ const Home = () => {
           <div className="flex items-center gap-3">
             <button
               onClick={toggle}
-              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+              aria-label={
+                isDark ? "Switch to light mode" : "Switch to dark mode"
+              }
               className="relative w-10 h-5 rounded-full transition-colors focus:outline-none bg-white/20"
             >
               <span
@@ -65,7 +67,8 @@ const Home = () => {
           <div className="text-center">
             <h1 className="text-[#B2A1E4] r7">Main balance</h1>
             <p className="text-white b1">
-              ${integerPart}<span className="r4">{decimalPart}</span>
+              ${integerPart}
+              <span className="r4">{decimalPart}</span>
             </p>
           </div>
           <div className="flex justify-between items-center w-full">
@@ -136,7 +139,9 @@ const Home = () => {
         </div>
         <div className="flex flex-col gap-4 mt-4 mb-20">
           <div className="flex justify-between items-center">
-            <h1 className="b6 text-black dark:text-white">Latest Transactions</h1>
+            <h1 className="b6 text-black dark:text-white">
+              Latest Transactions
+            </h1>
             <button
               className="text-[#6B6B6B] dark:text-gray-400 r7"
               onClick={() => navigate("/history")}

@@ -6,7 +6,7 @@ import Home from "@/pages/main/Home";
 import History from "@/pages/main/History";
 import More from "@/pages/main/More";
 import { Settings } from "@/pages/main/Settings";
-import { DarkModeContext } from "@/contexts/DarkModeContext";
+import { DarkModeContext } from "@/context/DarkModeContext";
 import useDarkMode from "@/hooks/useDarkMode";
 
 function App() {
