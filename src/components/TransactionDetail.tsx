@@ -20,7 +20,7 @@ const TransactionDetail = ({
   return (
     <div>
       <div className="fixed inset-0 bg-black opacity-70" onClick={onClose} />
-      <div className="fixed bottom-0 left-0 right-0 sm:max-w-sm sm:mx-auto bg-white dark:bg-gray-900 rounded-t-2xl p-4 pb-10 flex flex-col gap-4">
+      <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 rounded-t-2xl p-4 pb-10 flex flex-col gap-4">
         <div className="flex items-center gap-3">
           <img src={icon} alt={title} className="w-14 h-14 object-contain" />
           <div className="flex-1">

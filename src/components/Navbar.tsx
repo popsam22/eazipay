@@ -6,8 +6,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-azureish-white dark:border-gray-700" aria-label="Main navigation">
-      <div className="sm:max-w-sm sm:mx-auto flex justify-around">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-azureish-white dark:border-gray-700 flex justify-around" aria-label="Main navigation">
       {navItems.map((item) => {
         const isActive = pathname === item.path;
         return (
@@ -39,7 +38,6 @@ const Navbar = () => {
           </button>
         );
       })}
-      </div>
     </nav>
   );
 };
